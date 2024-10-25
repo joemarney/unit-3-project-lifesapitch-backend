@@ -29,7 +29,6 @@ userSchema.virtual('ratingsPosted', {
 })
 
 // ! Model
-
 const User = mongoose.model('User', userSchema);
 
 module.exports = User

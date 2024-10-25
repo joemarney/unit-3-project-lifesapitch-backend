@@ -1,8 +1,15 @@
-const express = require('express')
-const mongoose = require('mongoose')
-const router = express.Router()
-const bcrypt = require('bcryptjs')
+const express = require("express");
+const mongoose = require("mongoose");
+const router = express.Router();
+const bcrypt = require("bcryptjs");
 const jwt = require('jsonwebtoken')
+
+//* ==================== Imports =========================
+
+const User = require("../models/user");
+
+//! ==================== Sign Up =========================
+
 
 
 //* ==================== Imports =========================
@@ -89,3 +96,21 @@ router.post('/signin', async (req, res) => {
 
 
 module.exports = router
+
+//! ==================== Sign In =========================
+
+
+router.post('/signin', async (req, res) => {
+
+    
+})
+
+
+
+
+
+
+//! ==================== Sign Out =========================
+// local.storage.remove(token)
+
+module.exports = router;
