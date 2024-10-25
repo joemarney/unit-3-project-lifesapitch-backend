@@ -70,17 +70,23 @@ router.post('/signin', async (req, res) => {
 
     try {
 
-        const userExists = await User.findOne({ username: req.body.username })
+        const { username, password } = req.body
+
+        const userExists = await User.findOne({ username })
 
         if (!userExists) {
-            return res.status(401).json('Usernot found')
+            return res.status(401).json('User or Password not found')
         }
 
         const passwordExist = bcrypt.compareSync(req.body.password, userExists.password)
 
         if (!passwordExist) {
-            return res.status(401).json('Password not found')
+            return res.status(401).json('User or Password not found')
         }
+
+        // if (!bcrypt.compareSync(password, userExists.password)) {
+        //     return res.status(401).json('User or Password not found')
+        // }
 
         const payload = {
             username: userExists.username,
