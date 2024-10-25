@@ -16,6 +16,12 @@ const userSchema = new mongoose.Schema({
     }
 );
 
+userSchema.set('toJSON', {
+    transform: (document, returnedObject) => {
+        delete returnedObject.password
+    }
+})
+
 userSchema.virtual('likedCampsites', {
     ref: 'Campsite',
     localField: '_id',

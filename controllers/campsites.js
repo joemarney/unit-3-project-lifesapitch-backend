@@ -8,34 +8,26 @@ const router = express.Router()
 const Campsite = require('../models/campsite')
 
 
+=======
 
 
 
+// ! Middleware/Utilities
+const verifyToken = require('../middleware/verify-token')
 
 
-//! ==================== Homepage '/' ========================= ! //
+//! ==================== Index '/campsites' ========================= ! //
+router.get('', async (req, res) => {
+    try {
+        const campsites = await Campsite.find()
+        return res.json(campsites)
+    } catch (error) {
+        console.log(error);
+        console.log('Homepage isnt working');
+    }
+})
 
-
-
-
-
-
-
-
-
-
-//! ==================== Index '/sites' ========================= ! //
-
-
-
-
-
-
-
-
-
-
-//! ==================== Show '/sites/:siteId' ========================= ! //
+//! ==================== Show '/campsites/:campsiteId' ========================= ! //
 
 
 
@@ -48,7 +40,19 @@ const Campsite = require('../models/campsite')
 
 
 
-//! ==================== Create '/sites' ========================= ! //
+//! ==================== Create '/campsites' ========================= ! //
+router.post('', verifyToken, async (req, res) => {
+    try {
+        req.body.campsiteOwner = req.user._id
+        const campsite = await Campsite.create(req.body)
+        console.log(req.user);
+        campsite._doc.campsiteOwner = req.user
+        return res.status(201).json(campsite)
+    } catch (error) {
+        console.log(error);
+        console.log('Create isnt working');
+    }
+})
 
 
 
@@ -60,9 +64,7 @@ const Campsite = require('../models/campsite')
 
 
 
-
-//! ==================== Update '/sites/:siteId' ========================= ! //
-
+//! ==================== Update '/campsites/:campsiteId' ========================= ! //
 
 
 
@@ -73,7 +75,8 @@ const Campsite = require('../models/campsite')
 
 
 
-//! ==================== Delete'/sites/:siteId ========================= ! //
+
+//! ==================== Delete'/campsites/:campsiteId ========================= ! //
 
 
 
