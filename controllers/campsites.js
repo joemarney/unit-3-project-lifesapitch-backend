@@ -5,7 +5,7 @@ const router = express.Router()
 
 
 //! ==================== Models ========================= ! //
-
+const Campsite = require('../models/campsite')
 
 
 

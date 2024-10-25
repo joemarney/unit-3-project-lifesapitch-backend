@@ -8,14 +8,6 @@ const jwt = require('jsonwebtoken')
 
 const User = require("../models/user");
 
-//! ==================== Sign Up =========================
-
-
-
-//* ==================== Imports =========================
-
-const User = require('../models/user')
-
 
 
 
