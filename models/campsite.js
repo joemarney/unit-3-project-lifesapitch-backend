@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
-const commentsSchema = new mongoose.Schema(
+// ! Comment Schema
+const commentSchema = new mongoose.Schema(
   {
     text: { type: String, required: true },
     user: { type: mongoose.SchemaTypes.ObjectId, ref: "User", required: true },
@@ -10,28 +11,36 @@ const commentsSchema = new mongoose.Schema(
   }
 );
 
+// ! Rating Schema
 const ratingSchema = new mongoose.Schema(
   {
-    toiletRating: { type: Number, required: true },
-    showerRating: { type: Number, required: true },
-    campingSpace: { type: Number, required: true },
-    valueForMoney: { type: Number, required: true },
-    user: { type: mongoose.SchemaTypes.ObjectId, ref: "User", required: true },
+    toilets: Number,
+    showers: Number,
+    campingSpace: Number,
+    valueForMoney: Number,
+    user: { 
+      type: mongoose.SchemaTypes.ObjectId, 
+      ref: "User", 
+      required: true 
+    },
   },
   {
     timestamps: true,
   }
 );
 
+// ! Campsite Schema
 const campsiteSchema = new mongoose.Schema({
-  title: { type: String, required: true },
-  cost: { type: Number, required: true },
-  location: { type: String, required: true },
+  title: { type: String, required: ['Please provide a title', true] },
+  cost: { type: Number, required: ['Please provide a cost', true] },
+  location: { type: String, required: ['Please provide a location', true] },
+  campsiteOwner: { type: mongoose.SchemaTypes.ObjectId, ref: "User", required: true },
   comments: [commentSchema],
   rating: [ratingSchema],
-  campsiteOwner: { type: mongoose.SchemaTypes.ObjectId, ref: "User", required: true },
+  likes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
 });
 
-const Campsites = mongoose.model("Campsites", campsiteSchema);
+// ! Model
+const Campsite = mongoose.model("Campsite", campsiteSchema);
 
-module.exports = Campsites;
+module.exports = Campsite;
