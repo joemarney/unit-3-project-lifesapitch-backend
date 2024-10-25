@@ -43,6 +43,16 @@ app.use('/campsites', campsitesRouters)
 
 
 
+//! ==================== Homepage '/' ========================= ! //
+
+
+
+
+
+
+
+
+
 
 app.listen(port, () => {
     console.log('The express app is ready!');
