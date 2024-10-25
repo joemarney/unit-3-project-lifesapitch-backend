@@ -27,7 +27,7 @@ const campsiteSchema = new mongoose.Schema({
   title: { type: String, required: true },
   cost: { type: Number, required: true },
   location: { type: String, required: true },
-  comments: [commentSchema],
+  comments: [commentsSchema],
   rating: [ratingSchema],
   campsiteOwner: { type: mongoose.SchemaTypes.ObjectId, ref: "User", required: true },
 });
