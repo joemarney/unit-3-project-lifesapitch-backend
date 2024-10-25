@@ -1,91 +1,42 @@
-const express = require('express')
-const mongoose = require('mongoose')
-const router = express.Router()
-
-
+const express = require("express");
+const mongoose = require("mongoose");
+const router = express.Router();
 
 //! ==================== Models ========================= ! //
-const Campsite = require('../models/campsite')
-
-
-=======
-
-
+const Campsite = require("../models/campsite");
 
 // ! Middleware/Utilities
-const verifyToken = require('../middleware/verify-token')
-
+const verifyToken = require("../middleware/verify-token");
 
 //! ==================== Index '/campsites' ========================= ! //
-router.get('', async (req, res) => {
-    try {
-        const campsites = await Campsite.find()
-        return res.json(campsites)
-    } catch (error) {
-        console.log(error);
-        console.log('Homepage isnt working');
-    }
-})
+router.get("", async (req, res) => {
+  try {
+    const campsites = await Campsite.find();
+    return res.json(campsites);
+  } catch (error) {
+    console.log(error);
+    console.log("Homepage isnt working");
+  }
+});
 
 //! ==================== Show '/campsites/:campsiteId' ========================= ! //
 
-
-
-
-
-
-
-
-
-
-
-
 //! ==================== Create '/campsites' ========================= ! //
-router.post('', verifyToken, async (req, res) => {
-    try {
-        req.body.campsiteOwner = req.user._id
-        const campsite = await Campsite.create(req.body)
-        console.log(req.user);
-        campsite._doc.campsiteOwner = req.user
-        return res.status(201).json(campsite)
-    } catch (error) {
-        console.log(error);
-        console.log('Create isnt working');
-    }
-})
-
-
-
-
-
-
-
-
-
-
+router.post("", verifyToken, async (req, res) => {
+  try {
+    req.body.campsiteOwner = req.user._id;
+    const campsite = await Campsite.create(req.body);
+    console.log(req.user);
+    campsite._doc.campsiteOwner = req.user;
+    return res.status(201).json(campsite);
+  } catch (error) {
+    console.log(error);
+    console.log("Create isnt working");
+  }
+});
 
 //! ==================== Update '/campsites/:campsiteId' ========================= ! //
 
-
-
-
-
-
-
-
-
-
-
 //! ==================== Delete'/campsites/:campsiteId ========================= ! //
 
-
-
-
-
-
-
-
-
-
-
-module.exports = router
+module.exports = router;
