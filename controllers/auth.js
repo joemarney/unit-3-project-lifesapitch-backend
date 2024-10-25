@@ -30,7 +30,7 @@ router.post("/signUp", async (req, res) => {
             return res.status(406).json({ message: "Unauthorized" });
         }
 
-        const userInDb = await User.findOne({username: username});
+        const userInDb = await User.findOne({ username: username });
 
         if (userInDb) {
             console.log("This user already exists");
@@ -65,41 +65,38 @@ router.post("/signUp", async (req, res) => {
 
 //! ==================== Sign In =========================
 
-router.post('/signin', async (req,res) => {
+router.post('/signin', async (req, res) => {
 
 
+    try {
 
-const userExists = await User.findOne({username: req.body.username})
+        const userExists = await User.findOne({ username: req.body.username })
 
-try {
-    if(!userExists){
-        return res.status(404).json('User or Password not found')
+        if (!userExists) {
+            return res.status(401).json('Usernot found')
+        }
+
+        const passwordExist = bcrypt.compareSync(req.body.password, userExists.password)
+
+        if (!passwordExist) {
+            return res.status(401).json('Password not found')
+        }
+
+        const payload = {
+            username: userExists.username,
+            _id: userExists._id,
+        };
+
+        const token = jwt.sign(payload, process.env.JWT_SECRET, {
+            expiresIn: "24h",
+        });
+
+        return res.status(200).json({ user: payload, token });
+
+    } catch (error) {
+        console.log(error)
+        console.log('Sign in isnt working')
     }
-    
-    const passwordExist = bcrypt.compareSync (
-        req.body.password,
-        userExists.password
-    )
-    
-    if(!passwordExist){
-        return res.status(404).json('User or Password not found')
-    }
-    
-    const payload = {
-        username: user.username,
-        _id: user._id,
-    };
-    
-    const token = jwt.sign(payload, process.env.JWT_SECRET, {
-        expiresIn: "24h",
-    });
-    
-    return res.status(200).json({ user: payload, token });
-    
-} catch (error) {
-    console.log(error)
-    console.log('Sign in isnt working')
-}
 
 })
 

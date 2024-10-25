@@ -14,7 +14,7 @@ const verifyToken = require('../middleware/verify-token')
 
 
 //! ==================== Index '/campsites' ========================= ! //
-router.get('/', async (req, res) => {
+router.get('', async (req, res) => {
     try {
         const campsites = await Campsite.find()
         return res.json(campsites)
@@ -40,8 +40,10 @@ router.get('/', async (req, res) => {
 //! ==================== Create '/campsites' ========================= ! //
 router.post('', verifyToken, async (req, res) => {
     try {
+        req.body.campsiteOwner = req.user._id
         const campsite = await Campsite.create(req.body)
         console.log(req.user);
+        campsite._doc.campsiteOwner = req.user
         return res.status(201).json(campsite)
     } catch (error) {
         console.log(error);
