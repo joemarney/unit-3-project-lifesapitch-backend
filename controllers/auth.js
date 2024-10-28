@@ -25,7 +25,8 @@ router.post("/signup", async (req, res) => {
       return res.status(406).json({ message: "Unauthorized" });
     }
 
-    req.body.hashedPassword = bcrypt.hashSync(password, 12);
+    req.body.password = bcrypt.hashSync(password, 12);
+    console.log(req.body.hashedPassword)
 
     const user = await User.create(req.body);
 
@@ -41,6 +42,7 @@ router.post("/signup", async (req, res) => {
     console.log(user);
 
     return res.status(201).json({ user: payload, token });
+
   } catch (error) {
     console.log(error);
     console.log("Sign up isnt working");
@@ -57,18 +59,17 @@ router.post("/signin", async (req, res) => {
     console.log(user);
 
     if (!user) {
-      console.log("User not found");
+      console.log("User not found")
+      return res.status(401).json({ message: 'Invalid username or password' });
     }
 
-    const passwordExist = bcrypt.compareSync(req.body.password, user.password)
-console.log(passwordExist)
+    const passwordExist = bcrypt.compareSync(password, user.password);
+    console.log(passwordExist)
+    console.log(password)
+    console.log(user.password)
 
     if (!passwordExist) {
-      return res.status(401).json('User or Password not found')
-    }
-
-    if (!bcrypt.compareSync(password, user.password)) {
-      console.log("Password incorrect");
+      return res.status(401).json({ message: 'Invalid username or password' });
     }
 
     const payload = {
@@ -85,8 +86,11 @@ console.log(passwordExist)
 
 
   } catch (error) {
+
     console.log(error);
     console.log("Sign in isnt working");
+    return res.status(500).json({ message: 'An error occurred during sign-in' })
+
   }
 });
 
