@@ -6,6 +6,7 @@ const jwt = require("jsonwebtoken");
 //* ==================== Imports =========================
 
 const User = require("../models/user");
+const { showError, Unauthorized } = require('../utilities/errors')
 
 //! ==================== Sign Up =========================
 
@@ -14,19 +15,16 @@ router.post("/signup", async (req, res) => {
     const { username, password, confirmPassword, email } = req.body;
 
     if (password !== confirmPassword) {
-      console.log("Passwords dont match");
-      return res.status(406).json({ message: "Unauthorized" });
+      throw new Unauthorized("Passwords don't match")
     }
 
     const userInDb = await User.findOne({ username: username });
 
     if (userInDb) {
-      console.log("This user already exists");
-      return res.status(406).json({ message: "Unauthorized" });
+      throw new Unauthorized('User already exists')
     }
 
     req.body.password = bcrypt.hashSync(password, 12);
-    console.log(req.body.hashedPassword)
 
     const user = await User.create(req.body);
 
@@ -39,13 +37,10 @@ router.post("/signup", async (req, res) => {
       expiresIn: "24h",
     });
 
-    console.log(user);
-
     return res.status(201).json({ user: payload, token });
 
   } catch (error) {
-    console.log(error);
-    console.log("Sign up isnt working");
+    showError(error, res)
   }
 });
 
@@ -59,17 +54,13 @@ router.post("/signin", async (req, res) => {
     console.log(user);
 
     if (!user) {
-      console.log("User not found")
-      return res.status(401).json({ message: 'Invalid username or password' });
+      throw new Unauthorized('User was not found')
     }
 
     const passwordExist = bcrypt.compareSync(password, user.password);
-    console.log(passwordExist)
-    console.log(password)
-    console.log(user.password)
 
     if (!passwordExist) {
-      return res.status(401).json({ message: 'Invalid username or password' });
+      throw new Unauthorized('Password was incorrect')
     }
 
     const payload = {
@@ -87,9 +78,7 @@ router.post("/signin", async (req, res) => {
 
   } catch (error) {
 
-    console.log(error);
-    console.log("Sign in isnt working");
-    return res.status(500).json({ message: 'An error occurred during sign-in' })
+    showError(error, res)
 
   }
 });
