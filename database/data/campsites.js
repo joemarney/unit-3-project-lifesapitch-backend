@@ -8,7 +8,7 @@ module.exports = [
     toilets: true,
     showers: false,
     camperVans: true,
-    images: "https://placehold.co/600x400",
+    images: "https://placehold.co/200x100",
   },
   {
     title: "Cliffside Haven",
@@ -19,7 +19,7 @@ module.exports = [
     toilets: true,
     showers: true,
     camperVans: false,
-    images: "https://placehold.co/600x400",
+    images: "https://placehold.co/200x100",
   },
   {
     title: "Valley View",
@@ -30,7 +30,7 @@ module.exports = [
     toilets: true,
     showers: false,
     camperVans: true,
-    images: "https://placehold.co/600x400",
+    images: "https://placehold.co/200x100",
   },
   {
     title: "Seaside Escape",
@@ -41,7 +41,7 @@ module.exports = [
     toilets: true,
     showers: true,
     camperVans: false,
-    images: "https://placehold.co/600x400",
+    images: "https://placehold.co/200x100",
   },
   {
     title: "Highland Hideaway",
@@ -52,7 +52,7 @@ module.exports = [
     toilets: true,
     showers: true,
     camperVans: true,
-    images: "https://placehold.co/600x400",
+    images: "https://placehold.co/200x100",
   },
   {
     title: "Forest Edge Camp",
@@ -63,7 +63,7 @@ module.exports = [
     toilets: false,
     showers: false,
     camperVans: false,
-    images: "https://placehold.co/600x400",
+    images: "https://placehold.co/200x100",
   },
   {
     title: "Lake View Retreat",
@@ -74,7 +74,7 @@ module.exports = [
     toilets: true,
     showers: true,
     camperVans: true,
-    images: "https://placehold.co/600x400",
+    images: "https://placehold.co/200x100",
   },
   {
     title: "Moorside Haven",
@@ -85,7 +85,7 @@ module.exports = [
     toilets: true,
     showers: false,
     camperVans: false,
-    images: "https://placehold.co/600x400",
+    images: "https://placehold.co/200x100",
   },
   {
     title: "Riverside Camp",
@@ -96,7 +96,7 @@ module.exports = [
     toilets: true,
     showers: true,
     camperVans: true,
-    images: "https://placehold.co/600x400",
+    images: "https://placehold.co/200x100",
   },
   {
     title: "Hilltop Meadow",
@@ -107,6 +107,6 @@ module.exports = [
     toilets: true,
     showers: false,
     camperVans: false,
-    images: "https://placehold.co/600x400",
+    images: "https://placehold.co/200x100",
   },
 ];
