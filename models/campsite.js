@@ -34,6 +34,7 @@ const campsiteSchema = new mongoose.Schema({
   title: { type: String, required: ["Please provide a title", true] },
   cost: { type: Number, required: ["Please provide a cost", true] },
   location: { type: String, required: ["Please provide a location", true] },
+  description: String,
   campsiteOwner: { type: mongoose.SchemaTypes.ObjectId, ref: "User", required: true },
   comments: [commentSchema],
   rating: [ratingSchema],
