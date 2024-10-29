@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 //* ==================== Imports =========================
 
 const User = require("../models/user");
-const { showError, Unauthorized } = require('../utilities/errors')
+const { showError, Unauthorized } = require("../utilities/errors");
 
 //! ==================== Sign Up =========================
 
@@ -15,13 +15,13 @@ router.post("/signup", async (req, res) => {
     const { username, password, confirmPassword, email } = req.body;
 
     if (password !== confirmPassword) {
-      throw new Unauthorized("Passwords don't match")
+      throw new Unauthorized("Passwords don't match");
     }
 
     const userInDb = await User.findOne({ username: username });
 
     if (userInDb) {
-      throw new Unauthorized('User already exists')
+      throw new Unauthorized("User already exists");
     }
 
     req.body.password = bcrypt.hashSync(password, 12);
@@ -38,9 +38,8 @@ router.post("/signup", async (req, res) => {
     });
 
     return res.status(201).json({ user: payload, token });
-
   } catch (error) {
-    showError(error, res)
+    showError(error, res);
   }
 });
 
@@ -54,13 +53,13 @@ router.post("/signin", async (req, res) => {
     console.log(user);
 
     if (!user) {
-      throw new Unauthorized('User was not found')
+      throw new Unauthorized("User was not found");
     }
 
     const passwordExist = bcrypt.compareSync(password, user.password);
 
     if (!passwordExist) {
-      throw new Unauthorized('Password was incorrect')
+      throw new Unauthorized("Password was incorrect");
     }
 
     const payload = {
@@ -73,13 +72,8 @@ router.post("/signin", async (req, res) => {
     });
 
     return res.json({ user: payload, token });
-
-
-
   } catch (error) {
-
-    showError(error, res)
-
+    showError(error, res);
   }
 });
 
