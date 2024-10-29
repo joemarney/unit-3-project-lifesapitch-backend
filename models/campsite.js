@@ -35,7 +35,7 @@ const campsiteSchema = new mongoose.Schema({
   cost: { type: Number, required: ["Please provide a cost", true] },
   location: { type: String, required: ["Please provide a location", true] },
   description: String,
-  images: String,
+  images: [String],
   fires: Boolean,
   toilets: Boolean,
   showers: Boolean,
