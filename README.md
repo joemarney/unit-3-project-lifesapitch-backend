@@ -81,6 +81,9 @@ This app allows people to rate and review campsites they’ve been to, as well a
 We had problems with the `.compareSync()` function in the sign in route.
 	- We then realised it was due to a misspelling of 'hashedPassword'
 
+Problems with `campsite.deleteOne()`
+	- Instead we opted for `findByIdAndDelete()`
+
 ## Wins
 	
  
