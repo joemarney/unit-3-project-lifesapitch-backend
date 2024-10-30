@@ -66,6 +66,7 @@ router.post("/signin", async (req, res) => {
       username: user.username,
       _id: user._id,
       profilePhoto: user.profilePhoto,
+      campsiteOwner: user.campsiteOwner
     };
 
     const token = jwt.sign(payload, process.env.JWT_SECRET, {

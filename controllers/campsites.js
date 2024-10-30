@@ -42,7 +42,8 @@ router.get("/:campsiteId", async (req, res) => {
 router.post("", verifyToken, async (req, res) => {
   try {
     req.body.campsiteOwner = req.user._id;
-    const campsite = await Campsite.create(req.body);
+    let campsite = await Campsite.create(req.body);
+
     console.log(req.user);
     campsite._doc.campsiteOwner = req.user;
     return res.status(201).json(campsite);
