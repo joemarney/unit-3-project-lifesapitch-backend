@@ -8,7 +8,8 @@ module.exports = [
     toilets: true,
     showers: false,
     camperVans: true,
-    images: "https://placehold.co/200x100",
+    images: "https://placehold.co/300x150/76B041/000000",
+    coords: [-3.08875, 54.460861],
   },
   {
     title: "Cliffside Haven",
@@ -19,7 +20,8 @@ module.exports = [
     toilets: true,
     showers: true,
     camperVans: false,
-    images: "https://placehold.co/200x100",
+    images: "https://placehold.co/300x150/FFB84D/000000",
+    coords: [-4.693654, 50.6939125],
   },
   {
     title: "Valley View",
@@ -30,7 +32,8 @@ module.exports = [
     toilets: true,
     showers: false,
     camperVans: true,
-    images: "https://placehold.co/200x100",
+    images: "https://placehold.co/300x150/8FC1E3/000000",
+    coords: [-3.1307324, 51.8744294],
   },
   {
     title: "Seaside Escape",
@@ -41,7 +44,8 @@ module.exports = [
     toilets: true,
     showers: true,
     camperVans: false,
-    images: "https://placehold.co/200x100",
+    images: "https://placehold.co/300x150/E6ACB8/000000",
+    coords: [-1.6554362, 55.5325208],
   },
   {
     title: "Highland Hideaway",
@@ -52,7 +56,8 @@ module.exports = [
     toilets: true,
     showers: true,
     camperVans: true,
-    images: "https://placehold.co/200x100",
+    images: "https://placehold.co/300x150/A9D88F/000000",
+    coords: [-4.7305995, 57.1199978],
   },
   {
     title: "Forest Edge Camp",
@@ -63,7 +68,8 @@ module.exports = [
     toilets: false,
     showers: false,
     camperVans: false,
-    images: "https://placehold.co/200x100",
+    images: "https://placehold.co/300x150/F7BDBF/000000",
+    coords: [-1.5965626, 50.8571497],
   },
   {
     title: "Lake View Retreat",
@@ -74,7 +80,8 @@ module.exports = [
     toilets: true,
     showers: true,
     camperVans: true,
-    images: "https://placehold.co/200x100",
+    images: "https://placehold.co/300x150/FFC857/000000",
+    coords: [-4.768024, 56.1647366],
   },
   {
     title: "Moorside Haven",
@@ -85,7 +92,8 @@ module.exports = [
     toilets: true,
     showers: false,
     camperVans: false,
-    images: "https://placehold.co/200x100",
+    images: "https://placehold.co/300x150/95D0B8/000000",
+    coords: [-0.8853241, 54.3748437],
   },
   {
     title: "Riverside Camp",
@@ -96,7 +104,8 @@ module.exports = [
     toilets: true,
     showers: true,
     camperVans: true,
-    images: "https://placehold.co/200x100",
+    images: "https://placehold.co/300x150/FFE066/000000",
+    coords: [-3.0322592, 52.1020629],
   },
   {
     title: "Hilltop Meadow",
@@ -107,6 +116,7 @@ module.exports = [
     toilets: true,
     showers: false,
     camperVans: false,
-    images: "https://placehold.co/200x100",
+    images: "https://placehold.co/300x150/BAA7E8/000000",
+    coords: [-1.8042669, 53.29916],
   },
 ];

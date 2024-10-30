@@ -1,33 +1,33 @@
 const mongoose = require("mongoose");
 
 // ! Comment Schema
-const commentSchema = new mongoose.Schema(
-  {
-    text: { type: String, required: true },
-    user: { type: mongoose.SchemaTypes.ObjectId, ref: "User", required: true },
-  },
-  {
-    timestamps: true,
-  }
-);
+// const commentSchema = new mongoose.Schema(
+//   {
+//     text: { type: String, required: true },
+//     user: { type: mongoose.SchemaTypes.ObjectId, ref: "User", required: true },
+//   },
+//   {
+//     timestamps: true,
+//   }
+// );
 
 // ! Rating Schema
-const ratingSchema = new mongoose.Schema(
-  {
-    toilets: Number,
-    showers: Number,
-    campingSpace: Number,
-    valueForMoney: Number,
-    user: {
-      type: mongoose.SchemaTypes.ObjectId,
-      ref: "User",
-      required: true,
-    },
-  },
-  {
-    timestamps: true,
-  }
-);
+// const ratingSchema = new mongoose.Schema(
+//   {
+//     toilets: Number,
+//     showers: Number,
+//     campingSpace: Number,
+//     valueForMoney: Number,
+//     user: {
+//       type: mongoose.SchemaTypes.ObjectId,
+//       ref: "User",
+//       required: true,
+//     },
+//   },
+//   {
+//     timestamps: true,
+//   }
+// );
 
 // ! Campsite Schema
 const campsiteSchema = new mongoose.Schema({
@@ -41,9 +41,10 @@ const campsiteSchema = new mongoose.Schema({
   showers: Boolean,
   camperVans: Boolean,
   campsiteOwner: { type: mongoose.SchemaTypes.ObjectId, ref: "User", required: true },
-  comments: [commentSchema],
-  rating: [ratingSchema],
-  likes: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+  // comments: [commentSchema],
+  // rating: [ratingSchema],
+  // likes: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+  coords: { type: Array },
 });
 
 // ! Model
