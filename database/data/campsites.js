@@ -8,7 +8,7 @@ module.exports = [
     toilets: true,
     showers: false,
     camperVans: true,
-    images: "https://placehold.co/300x150/76B041/000000",
+    images: ["https://placehold.co/300x150/76B041/000000", "https://placehold.co/300x150/FF6B6B/000000", "https://placehold.co/300x150/FFD93D/000000"],
     coords: [-3.08875, 54.460861],
   },
   {
@@ -20,7 +20,7 @@ module.exports = [
     toilets: true,
     showers: true,
     camperVans: false,
-    images: "https://placehold.co/300x150/FFB84D/000000",
+    images: ["https://placehold.co/300x150/4ECDC4/000000", "https://placehold.co/300x150/F8B195/000000", "https://placehold.co/300x150/C06C84/000000"],
     coords: [-4.693654, 50.6939125],
   },
   {
@@ -32,7 +32,7 @@ module.exports = [
     toilets: true,
     showers: false,
     camperVans: true,
-    images: "https://placehold.co/300x150/8FC1E3/000000",
+    images: ["https://placehold.co/300x150/355C7D/000000", "https://placehold.co/300x150/E84A5F/000000", "https://placehold.co/300x150/F67280/000000"],
     coords: [-3.1307324, 51.8744294],
   },
   {
@@ -44,7 +44,7 @@ module.exports = [
     toilets: true,
     showers: true,
     camperVans: false,
-    images: "https://placehold.co/300x150/E6ACB8/000000",
+    images: ["https://placehold.co/300x150/6C5B7B/000000", "https://placehold.co/300x150/C06C84/000000", "https://placehold.co/300x150/F8B195/000000"],
     coords: [-1.6554362, 55.5325208],
   },
   {
@@ -56,7 +56,7 @@ module.exports = [
     toilets: true,
     showers: true,
     camperVans: true,
-    images: "https://placehold.co/300x150/A9D88F/000000",
+    images: ["https://placehold.co/300x150/3F5D7D/000000", "https://placehold.co/300x150/FFB347/000000", "https://placehold.co/300x150/82B47D/000000"],
     coords: [-4.7305995, 57.1199978],
   },
   {
@@ -68,7 +68,7 @@ module.exports = [
     toilets: false,
     showers: false,
     camperVans: false,
-    images: "https://placehold.co/300x150/F7BDBF/000000",
+    images: ["https://placehold.co/300x150/FFC857/000000", "https://placehold.co/300x150/6C5B7B/000000", "https://placehold.co/300x150/55BCC9/000000"],
     coords: [-1.5965626, 50.8571497],
   },
   {
@@ -80,7 +80,7 @@ module.exports = [
     toilets: true,
     showers: true,
     camperVans: true,
-    images: "https://placehold.co/300x150/FFC857/000000",
+    images: ["https://placehold.co/300x150/8CBEA3/000000", "https://placehold.co/300x150/DB5461/000000", "https://placehold.co/300x150/FF8C42/000000"],
     coords: [-4.768024, 56.1647366],
   },
   {
@@ -92,7 +92,7 @@ module.exports = [
     toilets: true,
     showers: false,
     camperVans: false,
-    images: "https://placehold.co/300x150/95D0B8/000000",
+    images: ["https://placehold.co/300x150/779ECB/000000", "https://placehold.co/300x150/F5A962/000000", "https://placehold.co/300x150/AA4B41/000000"],
     coords: [-0.8853241, 54.3748437],
   },
   {
@@ -104,7 +104,7 @@ module.exports = [
     toilets: true,
     showers: true,
     camperVans: true,
-    images: "https://placehold.co/300x150/FFE066/000000",
+    images: ["https://placehold.co/300x150/A0D0E1/000000", "https://placehold.co/300x150/DE6A6A/000000", "https://placehold.co/300x150/FFAA4C/000000"],
     coords: [-3.0322592, 52.1020629],
   },
   {
@@ -116,7 +116,7 @@ module.exports = [
     toilets: true,
     showers: false,
     camperVans: false,
-    images: "https://placehold.co/300x150/BAA7E8/000000",
+    images: ["https://placehold.co/300x150/8EA6B4/000000", "https://placehold.co/300x150/AB83A1/000000", "https://placehold.co/300x150/C95D63/000000"],
     coords: [-1.8042669, 53.29916],
   },
 ];
