@@ -31,7 +31,6 @@ router.post("/signup", async (req, res) => {
     const payload = {
       username: user.username,
       _id: user._id,
-      profilePhoto: user.profilePhoto,
       campsiteOwner: user.campsiteOwner,
     };
 
@@ -67,7 +66,6 @@ router.post("/signin", async (req, res) => {
     const payload = {
       username: user.username,
       _id: user._id,
-      profilePhoto: user.profilePhoto,
       campsiteOwner: user.campsiteOwner,
     };
 
