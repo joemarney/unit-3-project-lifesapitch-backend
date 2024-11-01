@@ -31,6 +31,8 @@ router.post("/signup", async (req, res) => {
     const payload = {
       username: user.username,
       _id: user._id,
+      profilePhoto: user.profilePhoto,
+      campsiteOwner: user.campsiteOwner,
     };
 
     const token = jwt.sign(payload, process.env.JWT_SECRET, {
