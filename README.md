@@ -1,6 +1,6 @@
 # Project 3: Life's a Pitch
 
-![homepage of our application showing green tiles of different campsites with a cream background colour](./public/images/AppScreenshot.png)
+![homepage of our application showing green tiles of different campsites with a cream background colour](./assets/AppScreenshot.png)
 
 ## Deployment Link
 
@@ -130,7 +130,7 @@ I made a carousel component that takes the images uploaded by the campsite owner
 
 We found that the communication between the front end and back end can be slow at times. I created a loading page component which makes the app have a more seamless experience for the end user.
 
-![screenshot of a loading page featuring a cartoon tent moving in the wind](./public/images/loadingscreenshot.png)
+![screenshot of a loading page featuring a cartoon tent moving in the wind](./assets/loadingscreenshot.png)
 
 ## Bugs
 
