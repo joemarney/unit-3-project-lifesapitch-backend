@@ -17,8 +17,15 @@ mongoose.connection.on("connected", () => {
 //! ==================== Middleware ========================= ! //
 
 app.use(express.json());
+<<<<<<< HEAD
 app.use(morgan("dev"));
 app.use(cors({ origin: process.env.FRONT_END_URL }));
+=======
+app.use(morgan('dev'))
+app.use(cors({ origin: process.env.FRONT_END_URL }))
+
+
+>>>>>>> 3c6f956289132c0500ad952c8363c6354f2fd43c
 
 //! ==================== Controllers ========================= ! //
 

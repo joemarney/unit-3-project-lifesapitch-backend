@@ -8,6 +8,8 @@
 
 ## Link to Front / Backend
 
+[Frontend GitHub Link](https://github.com/joemarney/unit-3-project-lifesapitch-frontend.git)
+
 [Front end repository!][Frontend]
 
 [Frontend]: https://github.com/joemarney/unit-3-project-lifesapitch-frontend
@@ -115,6 +117,8 @@ We had problems with the `.compareSync()` function in the sign in route. There w
 Problems with `campsite.deleteOne()` - Instead we opted for `findByIdAndDelete()`
 
 Deploying with Netlify came as a challenge. Inputting the frontend and backend links as environment variables within the Netlify GUI had a trailing slash by default and it made all of our routes return 404's.
+
+A bit of styling issue, trying to workout why some pages had more/less margins than the rest. But it was easily rectifiable
 
 ## Wins
 
